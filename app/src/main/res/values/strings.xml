@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Flamingo</string>
+    <string-array name="units">
+        <item>metric</item>
+        <item>imperial</item>
+    </string-array>
+
+    <string-array name="Locale">
+        <item></item>
+
+    </string-array>
+
+    <string-array name="orderby">
+        <item>popularity</item>
+        <item>price</item>
+        <item>review score</item>
+        <item>distance</item>
+    </string-array>
+
+    <string-array name="fillterByCurrency">
+        <item>AED</item>
+        <item>AFN</item>
+        <item>ALL</item>
+        <item>AMD</item>
+        <item>ANG</item>
+        <item>AOA</item>
+        <item>ARS</item>
+        <item>AUD</item>
+        <item>AWG</item>
+        <item>AZN</item>
+        <item>BAM</item>
+        <item>BBD</item>
+        <item>BDT</item>
+        <item>BGN</item>
+        <item>BHD</item>
+        <item>BIF</item>
+        <item>EUR</item>
+        <item>EGP</item>
+        <item>KES</item>
+        <item>SAR</item>
+        <item>STD</item>
+        <item>SRD</item>
+        <item>USD</item>
+        <item>AUD</item>
+        <item>AWG</item>
+        <item>AZN</item>
+    </string-array>
+
+
+    
+</resources>
