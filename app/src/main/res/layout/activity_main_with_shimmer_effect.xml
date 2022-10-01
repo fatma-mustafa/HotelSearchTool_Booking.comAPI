@@ -9,6 +9,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -27,87 +28,88 @@
                 android:id="@+id/ImgVw"
                 android:layout_width="130dp"
                 android:layout_height="110dp"
-                android:scaleType="fitXY"
                 android:layout_margin="10dp"
+                android:background="@color/light_grey"
                 android:adjustViewBounds="true"
-                android:src="@drawable/outline" />
+         />
 
             <TextView
                 android:id="@+id/eleName"
-                android:layout_width="wrap_content"
+                android:layout_width="160dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_toRightOf="@id/ImgVw"
                 android:fontFamily="sans-serif-black"
-                android:text="Element Name"
+                android:background="@color/light_grey"
                 android:textColor="@color/main_app_color"
                 android:textSize="15dp" />
 
             <TextView
                 android:id="@+id/address"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
                 android:layout_below="@id/eleName"
-                android:layout_marginTop="1dp"
+                android:layout_marginTop="5dp"
                 android:layout_toRightOf="@id/ImgVw"
-                android:text="Location/country/region/hotel loaction"
                 android:textColor="@color/black"
+                android:background="@color/light_grey"
+
                 android:textSize="13dp" />
 
             <TextView
                 android:id="@+id/scoreClass"
-                android:layout_width="wrap_content"
+                android:layout_width="70dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/address"
                 android:layout_marginTop="3dp"
                 android:layout_toRightOf="@id/ImgVw"
-                android:text="(good/verygood/ .. )"
+                android:background="@color/light_grey"
                 android:textColor="#1E1D1D"
                 android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/rvwScore"
-                android:layout_width="wrap_content"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/address"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="3dp"
                 android:layout_toRightOf="@id/scoreClass"
-                android:text="Review Score"
+                android:background="@color/light_grey"
                 android:textColor="@color/black"
                 android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/rvwNr"
-                android:layout_width="wrap_content"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rvwScore"
                 android:layout_marginTop="2dp"
                 android:layout_toRightOf="@id/ImgVw"
-                android:text="Review number"
+                android:background="@color/light_grey"
                 android:textColor="#1E1D1D"
                 android:textSize="10dp" />
 
             <TextView
                 android:id="@+id/price"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="300dp"
                 android:layout_marginTop="95dp"
                 android:fontFamily="sans-serif-black"
-                android:text="price"
+                android:background="@color/light_grey"
                 android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/curr"
                 android:layout_toRightOf="@id/price"
-                android:layout_width="wrap_content"
+                android:layout_width="40dp"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="1dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="95dp"
                 android:fontFamily="sans-serif-black"
                 android:textColor="@color/black"
-                android:text="Currency"
+                android:background="@color/light_grey"
               />
 
         </RelativeLayout>

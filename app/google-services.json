@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "356038291792",
+    "project_id": "tourish-674d9",
+    "storage_bucket": "tourish-674d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356038291792:android:1ad12d22f8e34ece86bc55",
+        "android_client_info": {
+          "package_name": "com.example.hotelsearchtool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "356038291792-hr5r9topiqt79hpptioomihfpgn44t93.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.hotelsearchtool",
+            "certificate_hash": "cca58782f380b09b349bdd93d8fdf37632c74483"
+          }
+        },
+        {
+          "client_id": "356038291792-5lrt2c9rjb2ooul1omfr5748fjaqs16a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCZPPz38YiRvvwLxEdN1DZErPWFtS8wwLg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "356038291792-5lrt2c9rjb2ooul1omfr5748fjaqs16a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

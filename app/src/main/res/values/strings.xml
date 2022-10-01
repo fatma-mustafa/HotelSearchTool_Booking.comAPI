@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Flamingo</string>
+    <string name="app_name">Tourish</string>
     <string-array name="units">
         <item>metric</item>
         <item>imperial</item>
@@ -47,5 +47,4 @@
     </string-array>
 
 
-    
 </resources>

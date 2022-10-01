@@ -1,22 +1,246 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-     android:background="@color/white"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <com.denzcoskun.imageslider.ImageSlider
-        android:id="@+id/image_slider"
-        app:iss_auto_cycle="true"
-        app:iss_delay="0"
-        app:iss_period="1000"
-        app:iss_placeholder="@color/white"
-        app:iss_error_image="@color/black"
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/idViewPager"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        app:iss_selected_dot="@drawable/default_selected_dot"
-        app:iss_unselected_dot="@drawable/default_unselected_dot"
-        />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
-</RelativeLayout>
+
+    <TextView
+        android:id="@+id/hotel_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Hotel name"
+        android:textColor="@color/main_app_color"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toStartOf="@+id/rvwScore"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/idViewPager"
+        app:layout_constraintTop_toBottomOf="@+id/idViewPager" />
+
+    <TextView
+        android:id="@+id/rvwScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="90dp"
+        android:text="Review Score"
+        android:textColor="#1E1D1D"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/idViewPager"
+        app:layout_constraintTop_toBottomOf="@+id/idViewPager" />
+
+    <TextView
+        android:id="@+id/scoreClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="5dp"
+        android:layout_marginTop="30dp"
+        android:layout_toRightOf="@id/scoreClass"
+        android:text="(good/verygood/ .. )"
+        android:textColor="@color/black"
+        android:textSize="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/rvwScore"
+        app:layout_constraintTop_toBottomOf="@+id/idViewPager" />
+
+    <TextView
+        android:id="@+id/price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="sans-serif-black"
+        android:text="price"
+        android:layout_marginRight="5dp"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toStartOf="@+id/curr"
+       />
+
+    <TextView
+        android:id="@+id/curr"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="3dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Currency"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView"
+        app:layout_constraintEnd_toEndOf="@+id/scoreClass"
+       />
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+
+        app:layout_constraintEnd_toEndOf="@+id/curr"
+        app:layout_constraintStart_toStartOf="@+id/hotel_name"
+        app:layout_constraintTop_toBottomOf="@+id/hotel_name">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="description"
+                android:textColor="@color/black"
+                android:textSize="16sp" />
+
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/textView3"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginTop="20dp"-->
+            <!--                android:text="Amenities"-->
+            <!--                android:textColor="#5D5B5B"-->
+            <!--                android:textSize="18sp"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/description" />-->
+
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_marginTop="20dp"-->
+            <!--                    android:background="@color/white">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iconHD1"-->
+            <!--                        android:layout_width="20dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:src="@drawable/sauna" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_toRightOf="@id/iconHD1"-->
+            <!--                        android:text="Sauna"-->
+            <!--                        android:textColor="@color/grey_font"-->
+            <!--                        android:textSize="18sp" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_marginTop="20dp"-->
+            <!--                    android:background="@color/white">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iconHD2"-->
+            <!--                        android:layout_width="20dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:src="@drawable/gym" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_toRightOf="@id/iconHD2"-->
+            <!--                        android:text="Fitness center"-->
+            <!--                        android:textColor="@color/grey_font"-->
+            <!--                        android:textSize="17sp" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_margin="20dp"-->
+            <!--                    android:background="@color/white">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iconHD3"-->
+            <!--                        android:layout_width="20dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:src="@drawable/laundry" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_toRightOf="@id/iconHD3"-->
+            <!--                        android:text="Laundry"-->
+            <!--                        android:textColor="@color/grey_font"-->
+            <!--                        android:textSize="17sp" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_margin="20dp"-->
+            <!--                    android:background="@color/white">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iconHD6"-->
+            <!--                        android:layout_width="20dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:src="@drawable/parking" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_toRightOf="@id/iconHD6"-->
+            <!--                        android:text="Parking"-->
+            <!--                        android:textColor="@color/grey_font"-->
+            <!--                        android:textSize="17sp" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_margin="20dp"-->
+            <!--                    android:background="@color/white">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iconHD4"-->
+            <!--                        android:layout_width="20dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:src="@drawable/bar" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_toRightOf="@id/iconHD4"-->
+            <!--                        android:text="Bar"-->
+            <!--                        android:textColor="@color/grey_font"-->
+            <!--                        android:textSize="17sp" />-->
+            <!--                </RelativeLayout>-->
+
+            <!--                <RelativeLayout-->
+            <!--                    android:layout_width="wrap_content"-->
+            <!--                    android:layout_height="match_parent"-->
+            <!--                    android:layout_margin="20dp"-->
+            <!--                    android:background="@color/white">-->
+
+            <!--                    <ImageView-->
+            <!--                        android:id="@+id/iconHD5"-->
+            <!--                        android:layout_width="20dp"-->
+            <!--                        android:layout_height="20dp"-->
+            <!--                        android:src="@drawable/restaurant" />-->
+
+            <!--                    <TextView-->
+            <!--                        android:layout_width="wrap_content"-->
+            <!--                        android:layout_height="wrap_content"-->
+            <!--                        android:layout_toRightOf="@id/iconHD5"-->
+            <!--                        android:text="Restaurant"-->
+            <!--                        android:textColor="@color/grey_font"-->
+            <!--                        android:textSize="17sp" />-->
+            <!--                </RelativeLayout>-->
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

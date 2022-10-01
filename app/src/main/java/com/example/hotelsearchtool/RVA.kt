@@ -1,17 +1,20 @@
 package com.example.hotelsearchtool
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import android.widget.Toast
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import kotlinx.coroutines.*
 
-class RVA(val ctx: Context, val dataset:List<hotel>, val onRVclickedItem: onRVclickedItem): RecyclerView.Adapter<RVA.VH>()
+class RVA(val ctx: Context,val ctx2:Any, var dataset:List<hotel>): RecyclerView.Adapter<RVA.VH>()
 {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int):VH {
         val view=LayoutInflater.from(parent.context).inflate(R.layout.search_result_rc,parent,false)
@@ -20,15 +23,26 @@ class RVA(val ctx: Context, val dataset:List<hotel>, val onRVclickedItem: onRVcl
 
     override fun onBindViewHolder(holder: VH, position: Int) {
         holder.address.text=dataset[position].address
-        Glide.with(ctx).load(dataset[position].main_photo_url).into(holder.image)
+        Glide.with(ctx).load(dataset[position].max_photo_url).into(holder.image)
         holder.name.text=dataset[position].hotel_name
         holder.price.text=dataset[position].price_breakdown?.all_inclusive_price.toString()
         holder.score.text=dataset[position].review_score.toString()
         holder.scorenr.text=dataset[position].review_nr.toString()
-        holder.curr.text=dataset[position].price_breakdown?.currency.toString()
+        holder.curr.text= dataset[position].price_breakdown?.currency.toString()
 
-        holder.itemView.setOnClickListener { onRVclickedItem.getHotelID(dataset[position].hotel_id)
-        Toast.makeText(ctx,dataset[position].hotel_id, Toast.LENGTH_LONG)
+        holder.itemView.setOnClickListener {
+            val ID=dataset[position].hotel_id
+            GlobalScope.launch {
+                val imglist = RequestManger.QueryHotelImages(ID)
+                startActivity(ctx,Intent(ctx,ctx2 as Class <*>)
+                    .putExtra ("imglist",hotel_component(imglist,dataset[position]) as Parcelable),null)
+            }
+
+//            startActivity(Intent(ctx,ctx2 as Class <*>).putExtra("imglist",imglist as Serializable))
+
+
+//        Toast.makeText(ctx,dataset[position].hotel_id, Toast.LENGTH_LONG)
+//            println(dataset[position].hotel_id)
         }
 
             if (dataset[position].review_score?.toFloat() >= 8.5) {
@@ -48,6 +62,8 @@ class RVA(val ctx: Context, val dataset:List<hotel>, val onRVclickedItem: onRVcl
 
 
     }
+
+
 
     override fun getItemCount(): Int {
         return dataset.size

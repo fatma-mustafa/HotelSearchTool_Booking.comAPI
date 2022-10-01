@@ -9,5 +9,14 @@
     <color name="white">#FFFFFFFF</color>
     <color name="green">#3AAE0C</color>
     <color name="red">#DC0C0C</color>
+    <color name="main_app_color">#172E39</color>
+    <color name="Backgrounds_color">#D6E1E1</color>
+    <color name="outline_color">#e8a93f</color>
+    <color name="pcolor">#99460e</color>
+    <color name="grey_font">#468A8A8A</color>
+    <color name="light_grey">#AEAEAE</color>
+
+
+
 
 </resources>

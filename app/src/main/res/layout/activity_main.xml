@@ -5,115 +5,158 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
-    android:background="#efefef">
+    android:background="@color/Backgrounds_color">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/constraintLayout"
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:background="#5c2e5c"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:padding="10dp"
+        android:background="@color/main_app_color"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/toolbar">
+
+            <TextView
+                android:id="@+id/appName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="Tourish"
+                android:textColor="@color/white"
+                android:textSize="28dp" />
+
+
+        </androidx.appcompat.widget.Toolbar>
         <SearchView
             android:id="@+id/src"
-            android:layout_width="390dp"
-            android:layout_height="45dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/rounded_items"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_items" />
+        <LinearLayout
+            android:id="@+id/chinoutlayout"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:weightSum="2"
+            >
 
-    <LinearLayout
-        android:id="@+id/chinoutlayout"
-        android:layout_width="385dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="20dp"
-        android:weightSum="2"
+            <TextView
+                android:id="@+id/chin"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginRight="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/rounded_items"
+                android:padding="6dp"
+                android:hint="Check In" />
+
+
+            <TextView
+                android:id="@+id/chout"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:padding="6dp"
+                android:background="@drawable/rounded_items"
+                android:hint="Check out" />
+        </LinearLayout>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <com.facebook.shimmer.ShimmerFrameLayout
+        android:id="@+id/shimmerLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView">
 
-        <EditText
-            android:id="@+id/chin"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginRight="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/outline"
-            android:hint="   Check In" />
+        <LinearLayout
+            android:id="@+id/lin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
+            <include layout="@layout/activity_main_with_shimmer_effect" />
 
-        <EditText
-            android:id="@+id/chout"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_weight="1"
-            android:background="@drawable/outline"
-            android:hint="   Check out" />
-    </LinearLayout>
+            <include layout="@layout/activity_main_with_shimmer_effect" />
+            <include layout="@layout/activity_main_with_shimmer_effect" />
+            <include layout="@layout/activity_main_with_shimmer_effect" />
+
+            <include layout="@layout/activity_main_with_shimmer_effect" />
+
+            <include layout="@layout/activity_main_with_shimmer_effect" />
+
+        </LinearLayout>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/scrollView2"
+        app:layout_constraintEnd_toEndOf="@+id/app_bar"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="@+id/scrollView2"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2" />
+        app:layout_constraintStart_toStartOf="@+id/app_bar"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar" />
 
-    <HorizontalScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        app:layout_constraintEnd_toEndOf="@+id/chinoutlayout"
-        app:layout_constraintStart_toStartOf="@+id/chinoutlayout"
-        app:layout_constraintTop_toBottomOf="@+id/chinoutlayout">
+<!--    <HorizontalScrollView-->
+<!--        android:id="@+id/scrollView2"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/chinoutlayout"-->
+<!--        app:layout_constraintStart_toStartOf="@+id/chinoutlayout"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/chinoutlayout">-->
 
-        <LinearLayout
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-           >
-
-
-            <Spinner
-                android:id="@+id/curr"
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:background="@drawable/rounded_items"
-                android:layout_marginRight="5dp"
-                android:entries="@array/fillterByCurrency" />
+<!--        <LinearLayout-->
+<!--            android:id="@+id/toolbar"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="35dp"-->
+<!--           >-->
 
 
-            <Spinner
-                android:id="@+id/units"
-                android:layout_width="110dp"
-                android:layout_height="match_parent"
-                android:entries="@array/units"
-                android:layout_marginRight="5dp"
-                android:spinnerMode="dropdown"
-                android:background="@drawable/rounded_items"
-                android:tooltipText="Units" />
+<!--            <Spinner-->
+<!--                android:id="@+id/curr"-->
+<!--                android:layout_width="100dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@drawable/rounded_items"-->
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:entries="@array/fillterByCurrency" />-->
 
 
-            <Spinner
-                android:id="@+id/odrby"
-                android:layout_width="140dp"
-                android:layout_height="match_parent"
-                android:entries="@array/orderby"
-                android:background="@drawable/rounded_items"
-                android:spinnerMode="dropdown" />
+<!--            <Spinner-->
+<!--                android:id="@+id/units"-->
+<!--                android:layout_width="110dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:entries="@array/units"-->
+<!--                android:layout_marginRight="5dp"-->
+<!--                android:spinnerMode="dropdown"-->
+<!--                android:background="@drawable/rounded_items"-->
+<!--                android:tooltipText="Units" />-->
 
-        </LinearLayout>
-    </HorizontalScrollView>
+
+<!--            <Spinner-->
+<!--                android:id="@+id/odrby"-->
+<!--                android:layout_width="140dp"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:entries="@array/orderby"-->
+<!--                android:background="@drawable/rounded_items"-->
+<!--                android:spinnerMode="dropdown" />-->
+
+<!--        </LinearLayout>-->
+<!--    </HorizontalScrollView>-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
